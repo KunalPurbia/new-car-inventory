@@ -1,0 +1,70 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='icon', type='image/x-icon', href='/images/favicon.ico')
+    link(rel='stylesheet', href='/stylesheets/registerForm.css')
+    link(rel='stylesheet', href='/stylesheets/catalogue.css')
+    title HOME
+  body
+    #navbar
+      img#brandLogo(src='/images/brand_logo.webp', alt='Brand Logo')
+      center
+        p#brandName WELCOME, #{userEmail}
+      span#buttons
+        button
+          if user === "buyer"
+            a.displayButton(href='/buyer/') HOME
+          else
+            a.displayButton(href='/seller/') HOME
+        button
+            if user === "buyer"
+                a.displayButton(href='/buyer/catalogue') CATALOGUE
+            else
+                a.displayButton(href='/seller/catalogue') CATALOGUE
+        button
+          a.displayButton(href='/') LOGOUT
+    #homeView
+      if user === "seller"
+        #crudButtons
+          #addCatalogue
+            a.displayButton(href='/seller/catalogue/add') ADD
+          #updateCatalogue
+            a.displayButton(href='/seller/catalogue/update') UPDATE
+          #deleteCatalogue
+            a.displayButton(href='/seller/catalogue/delete') DELETE
+      #container
+        img(src='https://www.bing.com/th?id=OIP.JXwJ20kbfTZ-0hlIE1s5rAHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2', alt='Jaguar Brand Logo')
+        h2 JAGUAR
+        p
+          b ABOUT: 
+          span Jaguar is the luxury vehicle brand of Jaguar Land Rover, a British multinational car manufacturer with its headquarters in Whitley, Coventry, England.
+        p
+          b SHOROOM CONTACT: 
+          span +222222222
+        p
+          b SHOWROOM ADDRESS:
+          span XYZ CITY
+        p
+          b SHOWROOM EMAIL:
+          span dummy@email.com
+        input(type='button', value='SEE CARS')
+      each car in catalogueData
+        #container
+          img(src=car.companyLogo, alt='Jaguar Brand Logo')
+          h2 #{car.carCompany}
+          p
+            b ABOUT: 
+            span #{car.companyAbout}
+          p
+            b SHOROOM CONTACT: 
+            span #{car.showroomContact}
+          p
+            b SHOWROOM ADDRESS:
+            span #{car.showroomAddress}
+          p
+            b SHOWROOM EMAIL:
+            span #{car.email}
+          input(type='button', value='SEE CARS')

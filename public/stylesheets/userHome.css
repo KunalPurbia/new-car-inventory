@@ -1,0 +1,78 @@
+body {
+    background-color: #e4f1fe;
+}
+
+#container {
+    position: relative;
+    display: inline-block;
+    background-color: white;
+    border: 2px solid black;
+    width: 300px;
+    height: 400px;
+    margin: 4.5em;
+    overflow: visible;
+}
+
+#container img {
+    position: absolute;
+    width: 100%;
+    border-bottom: 5px solid black;
+}
+
+#container h2 {
+    position: relative;
+    text-align: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    background-color: #8dc6ff;
+    top: 180px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#container h3 {
+    position: relative;
+    top: 160px;
+    text-align: center;
+    border: 1px dashed red;
+}
+
+#container p {
+    position: relative;
+    top: 145px;
+    text-align: center;
+}
+
+#container input {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    height: 50px;
+    width: 100px;
+    left: 30%;
+    margin-bottom: 3px;
+    border-radius: 100px;
+    background-color: #8dc6ff;
+}
+
+#addCatalogue {
+    position: relative;
+    float: right;
+    right: 10px;
+    margin-top: 5px;
+    margin-right: 15px;
+    height: 33px;
+    width: 180px;
+    background-color: darkred;
+    color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+
+#addCatalogue a{
+    position: relative;
+    padding: 15px;
+    padding-left: 25px;
+    top: 5px;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

@@ -1,0 +1,71 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='icon', type='image/x-icon', href='/images/favicon.ico')
+    link(rel='stylesheet', href='/stylesheets/registerForm.css')
+    link(rel='stylesheet', href='/stylesheets/catalogue.css')
+    title HOME
+  body
+    #navbar
+      img#brandLogo(src='/images/brand_logo.webp', alt='Brand Logo')
+      center
+        p#brandName WELCOME, #{userEmail}
+      span#buttons
+        button
+          if user === "buyer"
+            a.displayButton(href='/buyer/') HOME
+          else
+            a.displayButton(href='/seller/') HOME
+        button
+            if user === "buyer"
+                a.displayButton(href='/buyer/catalogue') CATALOGUE
+            else
+                a.displayButton(href='/seller/catalogue') CATALOGUE
+        button
+          a.displayButton(href='/') LOGOUT
+    #homeView
+      #registrationForm
+        form#formBox(action='/seller/catalogue/update', method='post')
+          label(for='userType') USER:
+          br
+          input#userType(type='text', name='userType', value=companyDetail.email, disabled='')
+          br
+          label(for='carCompany') Company Name:
+          br
+          input#carCompany(type='text', name='carCompany', value=companyDetail.carCompany)
+          if errorInput === "carCompany"
+            p(style={"color":"red","font-weight":"bold","text-decoration":"underline"})   #{message} 
+          endif
+          br
+          label(for='companyAbout') Company Detail:
+          br
+          input#companyAbout(type='text', name='companyAbout', value=companyDetail.companyAbout)
+          if errorInput === "companyAbout"
+            p(style={"color":"red","font-weight":"bold","text-decoration":"underline"})   #{message} 
+          endif
+          br
+          label(for='companyLogo') Company Logo:
+          br
+          input#companyLogo(type='text', name='companyLogo', value=companyDetail.companyLogo)
+          if errorInput === "companyLogo"
+            p(style={"color":"red","font-weight":"bold","text-decoration":"underline"})   #{message} 
+          endif
+          br
+          label(for='showroomContact') Showroom Contact No.:
+          br
+          input#showroomContact(type='text', name='showroomContact', value=companyDetail.showroomContact)
+          if errorInput === "showroomContact"
+            p(style={"color":"red","font-weight":"bold","text-decoration":"underline"})   #{message} 
+          endif
+          br
+          label(for='showroomAddress') Showroom Address:
+          br
+          input#showroomAddress(type='text', name='showroomAddress', value=companyDetail.showroomAddress)
+          if errorInput === "showroomAddress"
+            p(style={"color":"red","font-weight":"bold","text-decoration":"underline"})   #{message} 
+          endif
+          br
+          input#updateCompany(type='submit', value='UPDATE COMPANY')

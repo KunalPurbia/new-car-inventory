@@ -1,0 +1,38 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    link(rel='icon', type='image/x-icon', href='/images/favicon.ico')
+    link(rel='stylesheet', href='/stylesheets/registerForm.css')
+    link(rel='stylesheet', href='/stylesheets/userHome.css')
+    title HOME
+  body
+    #navbar
+      img#brandLogo(src='/images/brand_logo.webp', alt='Brand Logo')
+      center
+        p#brandName WELCOME, #{userEmail}
+      span#buttons
+        button
+          a.displayButton(href='#') HOME
+        button
+          if user === "buyer"
+              a.displayButton(href='/buyer/catalogue') CATALOGUE
+          else
+              a.displayButton(href='/seller/catalogue') CATALOGUE
+        button
+          a.displayButton(href='/') LOGOUT
+    #homeView
+      #container
+        img(src='https://th.bing.com/th/id/R.4729502f5c075ab922236163380f84d2?rik=kZNfPpUmZt5NXw&riu=http%3a%2f%2fwww.wallpaperup.com%2fuploads%2fwallpapers%2f2016%2f07%2f19%2f998208%2fe4c2979156a7e970c14065be71acc326.jpg&ehk=p08kFfhcy%2flcxOs6ZxLVzotR7NojVQIOVFy6kpCnQk4%3d&risl=&pid=ImgRaw&r=0', alt='Jaguar F-Pace')
+        h2 JAGUAR F-PACE
+        h3
+          em Price: 75,00,000 Rs.
+        p
+          b Showroom Name: 
+          u Jaguar, Udaipur
+          br
+          b Showroom Address: 
+          | Udaipur
+        input(type='button', value='BUY CAR')
