@@ -36,35 +36,35 @@ html(lang='en')
           #deleteCatalogue
             a.displayButton(href='/seller/catalogue/delete') DELETE
       #container
-        img(src='https://www.bing.com/th?id=OIP.JXwJ20kbfTZ-0hlIE1s5rAHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2', alt='Jaguar Brand Logo')
+        img(src='https://www.bing.com/th?id=OIP.JXwJ20kbfTZ-0hlIE1s5rAHaFj&w=288&h=216&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2', alt='Logo')
         h2 JAGUAR
         p
           b ABOUT: 
-          span Jaguar is the luxury vehicle brand of Jaguar Land Rover, a British multinational car manufacturer with its headquarters in Whitley, Coventry, England.
+          span  Jaguar is the luxury vehicle brand of Jaguar Land Rover, a British multinational car manufacturer with its headquarters in Whitley, Coventry, England.
         p
           b SHOROOM CONTACT: 
           span +222222222
         p
           b SHOWROOM ADDRESS:
-          span XYZ CITY
+          span  XYZ CITY
         p
           b SHOWROOM EMAIL:
-          span dummy@email.com
+          span  dummy@email.com
         input(type='button', value='SEE CARS')
       each car in catalogueData
         #container
-          img(src=car.companyLogo, alt='Jaguar Brand Logo')
+          img(src=car.companyLogo, alt='Logo')
           h2 #{car.carCompany}
           p
             b ABOUT: 
-            span #{car.companyAbout}
+            span  #{car.companyAbout}
           p
             b SHOROOM CONTACT: 
-            span #{car.showroomContact}
+            span  #{car.showroomContact}
           p
             b SHOWROOM ADDRESS:
-            span #{car.showroomAddress}
+            span  #{car.showroomAddress}
           p
             b SHOWROOM EMAIL:
-            span #{car.email}
+            span  #{car.email}
           input(type='button', value='SEE CARS')

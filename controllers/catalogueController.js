@@ -85,9 +85,13 @@ module.exports.postAddCataologue = [urlencoded, catalogueCheck, async function (
 module.exports.getUpdateCatalogue = async function (req, res) {
     let companyEmail = req.cookies.user_email;
     let companyDetail = await catalogueDB.findCompany(companyEmail);
-    res.render('updateCatalogue', {
-        companyDetail: companyDetail
-    })
+    if(!companyDetail){
+        res.render('addCatalogue', {notFound: "You dont have any existing company. ADD ONE", userEmail: req.cookies.user_email})
+    } else{
+        res.render('updateCatalogue', {
+            companyDetail: companyDetail
+        })
+    }
 }
 
 /////////////////////////////////////UPDATE COMPANY CATALOGUE
@@ -100,3 +104,13 @@ module.exports.updateCatalogue = [urlencoded, catalogueCheck, async function (re
         user: "seller"
     })
 }]
+
+/////////////////////////////////////DELETE COMPANY CATALOGUE
+module.exports.deleteCatalogue = function(req, res){
+    let companyEmail = req.cookies.user_email;
+    catalogueDB.deleteCompany(companyEmail);
+    res.render("userHomePage", {
+        userEmail: companyEmail,
+        user: "seller"
+    })
+}

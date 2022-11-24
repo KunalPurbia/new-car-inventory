@@ -29,6 +29,7 @@ html(lang='en')
     #homeView
       #registrationForm
         form#formBox(action='/seller/catalogue/add', method='post')
+          p(style="color:red; font-weight:bold;") #{notFound}
           label(for='userType') USER:
           br
           input#userType(type='text', name='userType', value=userEmail, disabled='')

@@ -55,3 +55,10 @@ module.exports.updateCompany = (email, details)=>{
         if(err) throw err;
     });
 }
+
+/////////////////////////////////////DELETING COMPANY DETAILS
+module.exports.deleteCompany = (email)=>{
+    Catalogue.deleteMany({email: email}, (err, result)=>{
+        if(err) throw err;
+    })
+}
